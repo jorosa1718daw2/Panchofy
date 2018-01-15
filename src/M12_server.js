@@ -73,6 +73,45 @@ function iniciar() {
 			});
 					}
 
+					else if(pathname == '/songs/Metallica.mp3'){
+						
+									console.log('audio');
+									fs.readFile('./songs/Metallica.mp3', function (err, sortida) {
+										response.writeHead(200, {
+											'Content-Type': 'audio/mpeg'
+										});
+						
+										response.write(sortida);
+										response.end();
+						});
+								}
+								else if(pathname == '/songs/sting.mp3'){
+									
+												console.log('audio');
+												fs.readFile('./songs/sting.mp3', function (err, sortida) {
+													response.writeHead(200, {
+														'Content-Type': 'audio/mpeg'
+													});
+									
+													response.write(sortida);
+													response.end();
+									});
+											}
+
+											else if(pathname == '/songs/police.mp3'){
+												
+															console.log('audio');
+															fs.readFile('./songs/police.mp3', function (err, sortida) {
+																response.writeHead(200, {
+																	'Content-Type': 'audio/mpeg'
+																});
+												
+																response.write(sortida);
+																response.end();
+												});
+														}
+				
+
 	
 		else if(pathname == '/afegirAlumne'){
 

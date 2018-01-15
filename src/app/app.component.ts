@@ -19,48 +19,7 @@ export class AppComponent {
 
  
 }
-/*
 
-@Component({
-  selector: 'dialog',
-  templateUrl: 'dialog.component.html',
-})
-
-export class DialogOverviewExample {
-  
-    animal: string;
-    name: string;
-  
-    constructor(public dialog: MatDialog) {}
-  
-    openDialog(): void {
-      let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-        width: '250px',
-        data: { name: this.name, animal: this.animal }
-      });
-  
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-        this.animal = result;
-      });
-    }
-  
-  }
-  
-  @Component({
-    selector: 'dialog-view',
-    templateUrl: 'dialog-view.component.html',
-  })
-  export class DialogOverviewExampleDialog {
-  
-    constructor(
-      public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-      @Inject(MAT_DIALOG_DATA) public data: any) { }
-  
-    onNoClick(): void {
-      this.dialogRef.close();
-    }*/
-  
   
 
 

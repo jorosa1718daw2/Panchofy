@@ -1,3 +1,37 @@
-<p>
-  about works!
-</p>
+
+<div>
+<h1>
+    Buscador
+  </h1>
+  <input class="form-control" type="text" name="search" [(ngModel)]="filter">       
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Artista</th>
+        <th>Canciom</th>
+        <th>album</th>
+        <th>Genero</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr (click)= "anarDetall(i)" *ngFor="let alumne of alumnes | filter:filter; let i = index">
+        
+        <td>
+          {{alumne.artista}}
+        </td>
+        <td>
+            {{alumne.song}}
+          </td>
+        <td>
+          {{alumne.album}}
+        </td>
+        <td>
+            {{alumne.genero }}
+          </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+  
+  
