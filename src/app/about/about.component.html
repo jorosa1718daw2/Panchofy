@@ -3,18 +3,18 @@
 <h1>
     Buscador
   </h1>
-  <input class="form-control" type="text" name="search" [(ngModel)]="filter">       
+  <input class="form-control" type="text" name="search" [(ngModel)]="filter"> 
   <table class="table">
     <thead>
       <tr>
-        <th>Artista</th>
-        <th>Canciom</th>
-        <th>album</th>
-        <th>Genero</th>
+        <th (click)="ordenarPerNom()" >Artista</th>
+        <th (click)="ordenarPerNom()">Canciom</th>
+        <th (click)="ordenarPerNom()">album</th>
+        <th (click)="ordenarPerNom()">Genero</th>
       </tr>
     </thead>
     <tbody>
-      <tr (click)= "anarDetall(i)" *ngFor="let alumne of alumnes | filter:filter; let i = index">
+      <tr (click)= "anarDetall(i)" *ngFor="let alumne of alumnes| filter:filter; let i = index">
         
         <td>
           {{alumne.artista}}
@@ -31,6 +31,7 @@
       </tr>
     </tbody>
   </table>
+
 
 </div>
   

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
@@ -12,7 +13,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent, DetailComponent } from './about/about.component';
 import { RouteComponent } from './route/route.component';
-import { SearchComponent } from './search/search.component';
+import { SearchComponent, PopOverComponent } from './search/search.component';
+import { AlbumComponent } from './album/album.component';
+import {OrdenarPipe } from './about/sortPipe';
+
 
 ///////
 
@@ -21,6 +25,7 @@ const route: Routes =[
   {path: 'search', component: SearchComponent},
   {path: 'app', component: AppComponent},
   {path: 'about', component: AboutComponent},
+  {path: 'albums', component: AlbumComponent},  
   {path: 'detall/:id', component: DetailComponent},
 
   
@@ -36,14 +41,18 @@ const route: Routes =[
     AboutComponent,
     RouteComponent,
     SearchComponent,
-    DetailComponent
+    DetailComponent,
+    AlbumComponent,
+    OrdenarPipe,
+    PopOverComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(route),
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    BrowserAnimationsModule
   ],
   exports:[ 
     RouterModule,
