@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('music-angular App', () => {
+describe('panchofy App', () => {
   let page: AppPage;
 
   beforeEach(() => {
