@@ -27,6 +27,9 @@ const route: Routes =[
   {path: 'about', component: AboutComponent},
   {path: 'albums', component: AlbumComponent},  
   {path: 'detall/:id', component: DetailComponent},
+  {path: 'detall/:song', component: DetailComponent},
+  
+  
 
   
 ];
@@ -45,6 +48,7 @@ const route: Routes =[
     AlbumComponent,
     OrdenarPipe,
     PopOverComponent
+    
   ],
   imports: [
     BrowserModule,

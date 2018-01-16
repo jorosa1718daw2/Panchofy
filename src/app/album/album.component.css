@@ -74,3 +74,7 @@
     -moz-transform:rotateY(0);
     transform:rotateY(0)
 }
+
+li {
+    color: black;
+}

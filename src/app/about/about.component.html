@@ -7,15 +7,13 @@
   <table class="table">
     <thead>
       <tr>
-        <th (click)="ordenarPerNom()" >Artista</th>
-        <th (click)="ordenarPerNom()">Canciom</th>
+        <th (click)="ordenarPerNom()">Cancion</th>
         <th (click)="ordenarPerNom()">album</th>
         <th (click)="ordenarPerNom()">Genero</th>
       </tr>
     </thead>
     <tbody>
       <tr (click)= "anarDetall(i)" *ngFor="let alumne of alumnes| filter:filter; let i = index">
-        
         <td>
           {{alumne.artista}}
         </td>

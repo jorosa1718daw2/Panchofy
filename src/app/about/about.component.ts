@@ -1,8 +1,6 @@
 import { Component, OnInit, Pipe, Directive, NgModule } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-
 import { OrdenarPipe } from './sortPipe';
-
 import {
   trigger,
   state,
@@ -57,7 +55,7 @@ export class AboutComponent {
         album: 'And Justice For All',
         genero: 'Thrash Metal',
         descripcion: "Metallica es una banda de thrash metal estadounidense originaria de Los Ángeles, pero con base en San Francisco desde febrero de 1983. Fue fundada en 1981 en Los Ángeles por Lars Ulrich y James Hetfield, a los que se les unirían Dave Mustaine y Ron McGovney. Estos dos músicos fueron después sustituidos por el guitarrista Kirk Hammett y el bajista Cliff Burton, Dave Mustaine fue despedido un año después de ingresar en la banda debido a su excesiva adicción al alcohol y su actitud violenta, y fundó la banda Megadeth, siendo sustituido por Kirk Hammett ex guitarrista de Exodus. Ron renuncia a la banda debido al mal comportamiento de Dave Mustaine, era violento y problemático cuando estaba bajo el efecto del alcohol. El colmo fue cuando Mustaine mojó el bajo de McGovney con cerveza, él sin saberlo lo conectó, recibiendo una descarga eléctrica. Es entonces, tras contactar con Cliff Burton que la banda se traslada a San Francisco. (Cabe resaltar que Ron sabia que lo iban a despedir y sustituir por Cliff Burton). Por otra parte, el 27 de septiembre de 1986, la muerte de Cliff Burton en un accidente de autobús en Suecia, durante una de sus giras, provocó la entrada al grupo de Jason Newsted,1​ quien, tras su abandono quince años más tarde, sería sustituido por el bajista actual, Robert Trujillo. A la fecha, la banda ha editado 10 álbumes de estudio, siendo el último de estos  Hardwired...To Self-Destruct, el cual fue lanzado mundialmente el 18 de noviembre del 2016. Las ventas totales de Metallica superan los 120 millones,2​ y se les considera parte de los cuatro grandes del thrash metal, junto con Megadeth, Slayer y Anthrax.3​ Además, el grupo ha conseguido numerosos premios musicales, entre los que destacan nueve Grammys, dos premios otorgados por la cadena musical MTV, dos galardones de la Academia de Música Americana (American Music Awards) y dos premios de la revista Billboard, además de poseer una estrella en el Paseo de la Fama de la revista Kerrang!. ",
-        song: 'Metallica'
+        song: 'The Shortest Straw'
       },
       {
         artista: 'Sting',
@@ -74,15 +72,8 @@ export class AboutComponent {
         descripcion: "The Police fue un importante e influyente trío británico de rock activo desde finales de la década de 1970 hasta mediados de la década de 1980, bajo el formato de power trio. Su estilo musical estuvo marcado por influencias del rock, reggae y jazz. Se formó en el año 1977 en Londres, tocaron oficialmente hasta 1986, con una pausa entre marzo de 1984 hasta julio de 1986 y nunca emitieron un comunicado sobre su disolución. La banda ha vendido casi 70 millones de copias por el mundo. Liderados por Gordon Matthew Sumner, más conocido como Sting (nombre que significa aguijón en inglés, y que deriva de un jersey de rugby a rayas amarillas y negras, estilo avispa, que el bajista siempre llevaba puesto en su juventud), Andy Summers en la guitarra, y Stewart Copeland como baterista, The Police fue el conjunto New Wave más popular de los 80's gracias a su impetuoso pop-rock new wave enriquecido por algunas dosis de reggae y un talento instrumental y compositivo sublime; y también gracias a que fue la única banda New Wave que en sus giras fue más allá del área Europa-Estados Unidos, contribuyendo de esta manera a globalizar la renovación de la música Rock-Pop.",
         song: 'Every Breath You Take'
 
-      },
-      {
-        artista: 'Anna',
-        album: '..',
-        genero: 'A',
-        descripcion: "...",
-        song: 'Do I Wanna Know'
-
-      },
+      }
+     
     ];
   }
   public anarDetall(id) {
@@ -109,11 +100,12 @@ export class DetailComponent {
   private album: string = '11';
   private genero: string;
   private descripcion: string;
-  private song: string;
+  private song: string = "";
   private sub: any;      // -> Subscriber
 
   constructor(private route: ActivatedRoute) { }
   ngOnInit() {
+    
     // get URL parameters
     this.sub = this.route
       .params
@@ -124,18 +116,23 @@ export class DetailComponent {
         this.genero = params['genero'];
         this.descripcion = params['descripcion'];
         this.song = params['song'];
+        
       });
+
+
   };
+  
 
-  path = 'http://localhost:8888/songs/';
-
-  audio = new Audio(this.path + this.song +'.mp3');
-
- 
+  audio = new Audio('http://localhost:8888/songs/police.mp3');
 
   playSong() {
-    console.log(this.audio);
-    this.audio.play();
+    if (this.audio.paused){
+      this.audio.play();
+    } else {
+     this.audio.pause();
+    }
+
+    return this.audio.paused;
   }
 
 }
