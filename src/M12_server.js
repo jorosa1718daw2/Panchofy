@@ -110,6 +110,20 @@ function iniciar() {
 																response.end();
 												});
 														}
+
+														else if(pathname == '/songs/autofilia.mp3'){
+															
+																		console.log('audio');
+																		fs.readFile('./songs/autofilia.mp3', function (err, sortida) {
+																			response.writeHead(200, {
+																				'Content-Type': 'audio/mpeg'
+																			});
+															
+																			response.write(sortida);
+																			response.end();
+															});
+
+														}
 				
 
 	
