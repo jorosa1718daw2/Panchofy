@@ -1,26 +1,27 @@
 <br><br><br>
 
-<h1>
-   {{artista}}
+<h1 class="detail">
+    {{artista}}
 </h1>
 
 
-<p>Artista/Grupo : {{artista}}
-        <br>
-        Cancion: {{ song }}
-        <br>
-        Album: {{ album }}
-        <br>
-        Genero: {{ genero }}
-        <br>
-        Descripcion: {{ descripcion }}
-        <br>
-       
-    </p>
+<p> <span class="bold">Grupo :</span> {{artista}} </p>
+
+<p> <span class="bold">Cancion:</span> {{ song }} </p>
+
+<p><span class="bold">Album:</span>{{ album }} </p>
+
+<p><span class="bold"> Genero:</span> {{ genero }}</p>
+
+<p><span class="bold">Descripcion:</span> {{ descripcion }} </p>
+
+
+
+
+<div class="buttons">
 
     <button (click)="playSong()">Play/Stop</button>
 
     <button routerLink="/about" routerLinkActive="active">Volver</button>
-    
 
-       
+</div>

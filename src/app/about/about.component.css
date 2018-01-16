@@ -1,4 +1,18 @@
-p {
-    margin-top: 20%;
-    color: white;
+p { color: white;
+    text-align: justify;
+    margin-left: 5%;
+    padding: 5px;
+    margin-right: 5%;
+}
+
+.buttons {
+    margin-left: 5%;
+}
+
+.detail {
+    text-align: center;
+}
+
+.bold {
+font-weight: bold;
 }
